@@ -34,7 +34,7 @@ export const MovieState = ({ children }) => {
     e.preventDefault();
     if (search.trim() === "") return;
     fetch(
-      `http://api.themoviedb.org/3/search/movie?&api_key=${API_KEY}&query=${search}&page=${currentPage}`
+      `https://api.themoviedb.org/3/search/movie?&api_key=${API_KEY}&query=${search}&page=${currentPage}`
     )
       .then((response) => {
         console.log("aaa");
