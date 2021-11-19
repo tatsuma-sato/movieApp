@@ -39,7 +39,6 @@ export const MovieState = ({ children }) => {
         return response.json();
       })
       .then((data) => {
-        console.log(data.results);
         setMovies(data.results);
         setShowPagination(false);
       })
