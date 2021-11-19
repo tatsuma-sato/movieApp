@@ -1,0 +1,383 @@
+img {
+  width: 200px;
+}
+
+.header {
+  width: 100%;
+  min-height: 80px;
+  background: black;
+  padding: 0 80px;
+
+  &_nav {
+    width: 100%;
+    height: 100%;
+    min-height: 80px;
+    padding: 20px 0;
+    background: black;
+    line-height: 50px;
+  }
+
+  &Logo {
+    font-size: 22px;
+    color: yellow;
+    font-weight: 900;
+    user-select: none;
+    @media (max-width: 600px) {
+      font-size: 12px;
+    }
+    > svg {
+      margin-right: 5px;
+    }
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media (max-width: 1365px) {
+      max-width: 90%;
+    }
+
+    #burger {
+      color: yellow;
+      cursor: pointer;
+      font-size: 24px;
+      display: none;
+
+      @media (max-width: 860px) {
+        display: block;
+      }
+    }
+  }
+
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    > button {
+      border: none;
+      outline: none;
+      background: transparent;
+      font-size: 22px;
+      margin-right: 24px;
+      font-weight: bold;
+      cursor: pointer;
+      user-select: none;
+    }
+  }
+}
+
+.headerNavMenu {
+  padding-left: 80px;
+  @media (max-width: 860px) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    min-height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 120px 50px;
+    width: 100%;
+    max-width: 340px;
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: all 0.8s ease-in-out;
+
+    &.hidden {
+      left: -600px;
+      opacity: 0;
+    }
+  }
+}
+
+.headerNavMenu {
+  > button {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 22px;
+    margin-right: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    @media (max-width: 860px) {
+      font-size: 40px;
+    }
+  }
+}
+
+input {
+  height: 40px;
+  min-height: 40px;
+  border: none;
+  outline: none;
+  border-radius: 50px;
+  border: 1px solid #333;
+  background: transparent;
+  padding: 10px 15px;
+  width: 720px;
+  color: yellow;
+  &::placeholder {
+    color: yellow;
+    letter-spacing: 1px;
+  }
+
+  @media (max-width: 860px) {
+    width: 220px;
+  }
+  @media (max-width: 600px) {
+    width: 150px;
+    font-size: 12px;
+  }
+}
+
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 10px;
+  background: blue;
+  border-radius: 5px;
+  animation: spinner 1.8s ease-in-out infinite;
+  &::before,
+  &::after {
+    position: absolute;
+    display: block;
+    content: "";
+    animation: spinner 1.8s ease-in-out infinite;
+    height: 5px;
+    border-radius: 5px;
+  }
+  &::before {
+    top: -20px;
+    left: 10px;
+    width: 40px;
+    background: red;
+  }
+  &::after {
+    bottom: -20px;
+    width: 35px;
+    background: yellow;
+  }
+
+  @keyframes spinner {
+    0% {
+      transform: translateX(40px);
+    }
+    50% {
+      transform: translateX(-30px);
+    }
+    100% {
+      transform: translateX(40px);
+    }
+  }
+}
+
+.popularMovie {
+  width: 100%;
+  .container {
+    &:nth-child(1) {
+      height: 81vh;
+      overflow-y: scroll;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      &::-webkit-scrollbar {
+        width: 0;
+      }
+    }
+    img {
+      width: 100%;
+      max-width: 240px;
+      height: 360px;
+      margin: 10px 0;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .container {
+      img {
+        max-width: 100%;
+        height: 500px;
+      }
+    }
+  }
+
+  @media (min-width: 601px) and (max-width: 854px) {
+    .container {
+      img {
+        max-width: 40%;
+      }
+    }
+  }
+
+  @media (min-width: 855px) and (max-width: 1144px) {
+    .container {
+      img {
+        max-width: 31%;
+      }
+    }
+  }
+
+  @media (min-width: 1145) {
+    .container {
+      img {
+        max-width: 23.4%;
+      }
+    }
+  }
+}
+
+.output {
+  padding: 0 80px;
+  background: black;
+  width: 100%;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  > .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+}
+
+.movies {
+  width: 100%;
+  .container {
+    &:nth-child(1) {
+      height: 68vh;
+      overflow-y: scroll;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      &::-webkit-scrollbar {
+        width: 0;
+      }
+      .error {
+        font-size: 38px;
+        color: red;
+        height: 32px;
+      }
+    }
+    img {
+      width: 100%;
+      max-width: 240px;
+      height: 360px;
+      margin: 10px 0;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .container {
+      img {
+        max-width: 100%;
+        height: 500px;
+      }
+    }
+  }
+
+  @media (min-width: 601px) and (max-width: 854px) {
+    .container {
+      img {
+        max-width: 40%;
+      }
+    }
+  }
+
+  @media (min-width: 855px) and (max-width: 1144px) {
+    .container {
+      img {
+        max-width: 31%;
+      }
+    }
+  }
+
+  @media (min-width: 1145) {
+    .container {
+      img {
+        max-width: 23.4%;
+      }
+    }
+  }
+}
+
+.moviesPagination {
+  width: 100%;
+  .container {
+    &:nth-child(1) {
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      button {
+        border: none;
+        outline: none;
+        background: rgb(0, 185, 0);
+        text-align: center;
+        color: #fff;
+        font-size: 20px;
+        font-weight: 600;
+        border-radius: 4px;
+        width: 160px;
+        padding: 10px 0;
+        cursor: pointer;
+        user-select: none;
+        margin: 0 10px;
+        transition: background 0.5s ease-in-out;
+        &:hover {
+          background: green;
+        }
+      }
+    }
+  }
+}
+
+.movie-item {
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    .over-lay {
+      left: 0;
+    }
+  }
+  .over-lay {
+    color: white;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    left: -100%;
+    transition: all 0.5s ease;
+    &-container {
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .over-lay-title {
+        padding: 10px 0;
+        margin-bottom: 10px;
+      }
+      .over-lay-rate {
+        width: 50px;
+        padding: 10px 0;
+        margin: 0 auto;
+        background-color: yellow;
+        color: black;
+        font-weight: bold;
+        border-radius: 10px;
+      }
+    }
+  }
+}

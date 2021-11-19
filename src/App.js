@@ -1,6 +1,7 @@
 import "./App.scss";
 
-import Hero from "./components/Hero/Hero";
+import styles from "../src/styles/styles.scss";
+import Hero from "./components/Header/Header";
 import { MovieState } from "./Context/MovieContext";
 
 function App() {
