@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 // import HeroNav from "./HeroNav";
 import { MovieContext } from "../../Context/MovieContext";
 import Container from "../ReusableComponents/Container";
-import HeroNavLink from "./HeaderNavLink";
+import HeaderNavLink from "./HeaderNavLink";
 import Output from "../Output/Output";
 import { faFilm } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -24,28 +24,26 @@ function Header() {
         <nav className="header_nav">
           <Container>
             <div className="wrapper">
-                <h2 className="headerLogo">
-                  <FontAwesomeIcon icon={faFilm} />
-                  Movie Searcher
-                </h2>
-                {/* <HeroNavMenu /> */}
-                <div
-                  className={(hiddenMenu ? "hidden" : "") + " headerNavMenu"}
-                >
-                  <HeroNavLink btnText="Popular" />
-                  <HeroNavLink btnText="All Movies" />
-                </div>
-                {/* <HeroNavSearch /> */}
-                <form onSubmit={handleSearch}>
-                  {activeLink !== "Popular" && (
-                    <input
-                      value={search}
-                      onChange={(e) => setSearch(e.target.value)}
-                      type="text"
-                      placeholder="Search for movies"
-                    />
-                  )}
-                </form>
+              <h2 className="headerLogo">
+                <FontAwesomeIcon icon={faFilm} />
+                Movie Searcher
+              </h2>
+              {/* <HeroNavMenu /> */}
+              <div className={(hiddenMenu ? "hidden" : "") + " headerNavMenu"}>
+                <HeaderNavLink btnText="Popular" />
+                <HeaderNavLink btnText="All Movies" />
+              </div>
+              {/* <HeroNavSearch /> */}
+              <form onSubmit={handleSearch}>
+                {activeLink !== "Popular" && (
+                  <input
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
+                    type="text"
+                    placeholder="Search for movies"
+                  />
+                )}
+              </form>
             </div>
             <i
               className={hiddenMenu ? "fas fa-bars" : "fas fa-times"}
