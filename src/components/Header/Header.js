@@ -6,7 +6,6 @@ import HeaderNavLink from "./HeaderNavLink";
 import Output from "../Output/Output";
 import { faFilm } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { BrowserRouter, Link } from "react-router-dom";
 
 function Header() {
   const {
@@ -30,12 +29,12 @@ function Header() {
               </h2>
               {/* <HeroNavMenu /> */}
               <div className={(hiddenMenu ? "hidden" : "") + " headerNavMenu"}>
-                <HeaderNavLink btnText="Popular" />
+                <HeaderNavLink btnText="Trending" />
                 <HeaderNavLink btnText="All Movies" />
               </div>
               {/* <HeroNavSearch /> */}
               <form onSubmit={handleSearch}>
-                {activeLink !== "Popular" && (
+                {activeLink !== "Trending" && (
                   <input
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}

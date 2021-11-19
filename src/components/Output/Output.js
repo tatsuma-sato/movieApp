@@ -11,7 +11,7 @@ function Output() {
 
   return (
     <div className="output">
-      {activeLink === "Popular" && (
+      {activeLink === "Trending" && (
         <Container>
           <Popular />
         </Container>

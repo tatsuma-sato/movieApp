@@ -1,6 +1,6 @@
 import "./App.scss";
 
-import styles from "../src/styles/styles.scss";
+import "../src/styles/styles.scss";
 import Hero from "./components/Header/Header";
 import { MovieState } from "./Context/MovieContext";
 import { Routes, Route } from "react-router-dom";

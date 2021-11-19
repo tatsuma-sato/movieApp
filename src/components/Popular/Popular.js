@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { MovieContext } from "../../Context/MovieContext";
 import Container from "../ReusableComponents/Container";
 import "../../styles/styles.scss";
-import { Link } from "react-router-dom";
+
 
 function Popular() {
   const { popularMovies } = useContext(MovieContext);

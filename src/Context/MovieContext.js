@@ -7,7 +7,7 @@ export const MovieState = ({ children }) => {
 
   const [isLoading, setIsLoading] = useState(false);
   const [hiddenMenu, setHiddenMenu] = useState(true);
-  const [activeLink, setActiveLink] = useState("Popular");
+  const [activeLink, setActiveLink] = useState("Trending");
   const [popularMovies, setPopularMovies] = useState([]);
   const [search, setSearch] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
