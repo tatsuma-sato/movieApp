@@ -3,12 +3,25 @@ import "./App.scss";
 import styles from "../src/styles/styles.scss";
 import Hero from "./components/Header/Header";
 import { MovieState } from "./Context/MovieContext";
+import { Routes, Route } from "react-router-dom";
+import ErrorPage from "./pages/ErrorPage";
 
 function App() {
   return (
-    <MovieState>
-      <Hero />
-    </MovieState>
+    <>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <MovieState>
+              <Hero />
+            </MovieState>
+          }
+        />
+
+        <Route path="*" element={<ErrorPage />} />
+      </Routes>
+    </>
   );
 }
 

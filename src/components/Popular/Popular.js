@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { MovieContext } from "../../Context/MovieContext";
 import Container from "../ReusableComponents/Container";
 import "../../styles/styles.scss";
+import { Link } from "react-router-dom";
 
 function Popular() {
   const { popularMovies } = useContext(MovieContext);
@@ -24,7 +25,7 @@ function Popular() {
       <Container>
         {popularMovies &&
           popularMovies.map((popularMovieItem) => (
-            <div className="movie-item">
+            <div className="movie-item" key={popularMovieItem.id}>
               <img
                 key={popularMovieItem.id}
                 src={`https://image.tmdb.org/t/p/w500${popularMovieItem.poster_path}`}

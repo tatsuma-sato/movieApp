@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { MovieContext } from "../../Context/MovieContext";
 import Container from "../ReusableComponents/Container";
 import Loader from "../ReusableComponents/Loader";
-import notFound from "../../image-not-found.png";
+import notFound from "../../images/image-not-found.png";
 
 function Movies() {
   const { movies, isLoading } = useContext(MovieContext);

@@ -16,7 +16,7 @@ export const MovieState = ({ children }) => {
 
   const getPopularMovies = () => {
     fetch(
-      `https://api.themoviedb.org/3/trending/all/day?api_key=${API_KEY}&page=1`
+      `https://api.themoviedb.org/3/trending/all/week?api_key=${API_KEY}&page=1`
     )
       .then((response) => {
         return response.json();
