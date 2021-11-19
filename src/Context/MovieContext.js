@@ -22,7 +22,6 @@ export const MovieState = ({ children }) => {
         return response.json();
       })
       .then((data) => {
-        console.log(data.results);
         setPopularMovies(data.results);
       })
       .catch((error) => {
@@ -37,7 +36,6 @@ export const MovieState = ({ children }) => {
       `https://api.themoviedb.org/3/search/movie?&api_key=${API_KEY}&query=${search}&page=${currentPage}`
     )
       .then((response) => {
-        console.log("aaa");
         return response.json();
       })
       .then((data) => {
