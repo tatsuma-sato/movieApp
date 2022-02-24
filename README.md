@@ -13,5 +13,5 @@ You can search movies and trending movies are showed up on the home page
 
 ### Search page
 
-![search page](https://user-images.githubusercontent.com/82295664/155462573-e22f73c6-c570-420d-9e93-e8f8a89d1a28.png)
+![search page](https://user-images.githubusercontent.com/82295664/155462841-deb3bfb2-6059-4e8b-a465-b63741297049.png)
 
