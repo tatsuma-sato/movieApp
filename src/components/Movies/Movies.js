@@ -28,7 +28,7 @@ function Movies() {
         )}
         {!isLoading ? (
           movies &&
-          movies.map((movieItem, index) => (
+          movies.map((movieItem) => (
             <div className="movie-item">
               <img
                 key={movieItem.id}
@@ -42,7 +42,11 @@ function Movies() {
 
               <div className="over-lay">
                 <div className="over-lay-container">
-                  <h3 className="over-lay-title">{movieItem.title !== undefined ? movieItem.title : "Title not found..."}</h3>
+                  <h3 className="over-lay-title">
+                    {movieItem.title !== undefined
+                      ? movieItem.title
+                      : "Title not found..."}
+                  </h3>
                   <p
                     className="over-lay-rate"
                     style={{ background: changeBackGround(movieItem) }}
